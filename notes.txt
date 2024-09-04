@@ -1,0 +1,22 @@
+Feature of NESTJS: 
+1) help developers to create microservices & monoliths applications (server side application)
+2) Simple to use, Quick to learn, easy to apply
+3) It uses TS
+4) powerful CLI like nest n project-name or nest start 
+5) Easy unit-testing application
+6) Greate Documentation
+7) for large scale applications
+
+Directory Stucture:
+.pkg.json: store data realated to our project
+.tsconfig: ts configration
+.nest-cli.json: nest cli related information
+
+3 main components (Conrollers, Providers, modules)
+
+1) Modules: It is a Root Module. every controoler has one module.
+cli: nest g module (name)
+2) Controllers: Received req and give res 
+cli: nest g controller (name)
+3) Service Provider: every logic to get, post, fetch, etc data in this file
+cli: g s (filename)
