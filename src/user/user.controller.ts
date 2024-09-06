@@ -38,9 +38,11 @@
 //hum asy be nh krty 
 
 
-import { Controller, Delete, Get, Param, Patch, Post, Req } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Req } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { Request } from "express";
+import { UpdateUserDto } from "./dto/user-update.dto";
+import { CreateUserDto } from "./dto/user-create.dto";
 
 @Controller('/user')
 export class UserController {
@@ -51,18 +53,23 @@ export class UserController {
   }
 
   @Get('/:id')
-  user(@Param('id') id:number){
+  user(@Param('id',  ParseIntPipe) id:number){
     return this.userService.singleUser(id);
   }
 
+  // @Post()
+  // storeUser(@Req() req: Request){
+  //   return this.userService.create(req)
+  // }
+
   @Post()
-  storeUser(@Req() req: Request){
-    return this.userService.create(req)
+  storeUser(@Body() createuserDto: CreateUserDto){
+    return this.userService.create(createuserDto)
   }
 
   @Patch('/:userid')
-  updateUser(@Param() params: {userid: number} , @Req() req: Request) {
-    return this.userService.update(req, params );
+  updateUser(@Param() params: {userid: number} , @Body() updateUserDto: UpdateUserDto) {
+    return this.userService.update(updateUserDto, params );
   }
 
   @Delete('/:id')

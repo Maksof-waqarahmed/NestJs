@@ -20,3 +20,18 @@ cli: nest g module (name)
 cli: nest g controller (name)
 3) Service Provider: every logic to get, post, fetch, etc data in this file
 cli: g s (filename)
+
+Dependency Injection: When class A uses some functionality of class b, then it is called that class a has a dependency of class b 
+to use class B we need to create its obj first 
+const b = new b()
+if this class is also depebnd on another class called so so we should make anotehr other called C. so on so far
+
+So, transfering the task of creating the obj to someone else and directly usig the dependency is called dependency injection.
+
+benefits of DI
+help in usit tetsig 
+cde reducte to create obj 
+loose coupling 
+
+
+Req payload: 
